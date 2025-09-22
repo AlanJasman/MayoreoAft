@@ -1,0 +1,189 @@
+/* Estilos base del contenedor */
+.container {
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Fondo gris claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Estilos para el encabezado */
+  .header {
+    padding: 1.5rem 2rem;
+    background-color: #ffffff; /* Blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    color: #1a1a1a; /* Negro */
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  /* Sección de perfil */
+  .profileSection {
+    display: flex;
+    gap: 2rem;
+    background-color: #ffffff; /* Blanco */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 2rem 2rem;
+  }
+  
+  .profileImageContainer {
+    flex-shrink: 0;
+  }
+  
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e63946; /* Rojo */
+  }
+  
+  .profileInitials {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #1a1a1a; /* Negro */
+    color: #ffffff; /* Blanco */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    border: 3px solid #e63946; /* Rojo */
+  }
+  
+  /* Información de usuario */
+  .userInfo {
+    flex-grow: 1;
+  }
+  
+  .userInfo h2 {
+    color: #1a1a1a; /* Negro */
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .roleBadge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+  }
+  
+  .roleBadge.admin {
+    background-color: #e63946; /* Rojo */
+    color: white;
+  }
+  
+  .roleBadge.user {
+    background-color: #5a5a5a; /* Gris medio */
+    color: white;
+  }
+  
+  .userInfo p {
+    color: #333333; /* Gris oscuro */
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .userInfo strong {
+    color: #1a1a1a; /* Negro */
+    font-weight: 600;
+    min-width: 120px;
+    display: inline-block;
+  }
+  
+  /* Sección de configuración */
+  .settingsSection {
+    background-color: #ffffff; /* Blanco */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 2rem;
+  }
+  
+  .settingsSection h3 {
+    color: #1a1a1a; /* Negro */
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .settingItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0; /* Gris claro */
+  }
+  
+  .settingContent {
+    flex-grow: 1;
+  }
+  
+  .settingContent h4 {
+    color: #1a1a1a; /* Negro */
+    font-size: 1rem;
+    margin: 0 0 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .settingContent p {
+    color: #5a5a5a; /* Gris medio */
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Botón de toggle */
+  .toggleButton {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .toggleButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .toggleButton:not(.active) {
+    background-color: #1a1a1a; /* Negro */
+    color: white;
+  }
+  
+  .toggleButton.active {
+    background-color: #e63946; /* Rojo */
+    color: white;
+  }
+  
+  /* Mensaje de error */
+  .error {
+    color: #e63946; /* Rojo */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }

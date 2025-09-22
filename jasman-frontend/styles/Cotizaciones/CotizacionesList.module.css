@@ -1,0 +1,224 @@
+
+.container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #f7f7f7; /* Fondo General */
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.header h1 {
+  color: #1a1a1a; /* Negro Intenso */
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e9e9e9; /* Borde Gris Claro */
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #D9232D;
+  box-shadow: 0 0 0 2px rgba(217, 35, 45, 0.1);
+}
+
+.cotizacionesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cotizacionCard {
+  background: white;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra Suave */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cotizacionCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08); /* Sombra más pronunciada */
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.codigo {
+  font-weight: 600;
+  color: #9e9e9e; /* Gris Medio */
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+
+.estado {
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cardBody {
+  padding: 1.25rem;
+  flex-grow: 1; /* Permite que el cuerpo crezca y empuje las acciones hacia abajo */
+}
+
+.clienteInfo h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+.clienteInfo p {
+  margin: 0.25rem 0;
+  color: #9e9e9e; /* Gris Medio */
+  font-size: 0.9rem;
+}
+
+.detalles {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.detalleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.detalleRow span:first-child {
+  color: #4a4a4a; /* Gris Oscuro */
+}
+
+.total {
+  font-weight: 700;
+  color: #D9232D; /* Rojo Primario */
+  font-size: 1rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  margin-top: auto; /* Empuja las acciones a la parte inferior */
+}
+
+.btnPrimary, .btnDanger {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  text-align: center;
+}
+
+.btnPrimary {
+  background: #D9232D; /* Rojo Primario */
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #b81d26; /* Rojo Oscuro */
+  transform: translateY(-2px);
+}
+
+.btnDanger {
+  background: #1a1a1a; /* Botón de eliminar en Negro */
+  color: white;
+}
+
+.btnDanger:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+.loading, .emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #9e9e9e;
+  font-size: 1.1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e9e9e9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.paginationBtn {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e9e9e9;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.paginationBtn:hover:not(:disabled) {
+  border-color: #D9232D;
+  color: #D9232D;
+}
+
+.paginationBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  .cotizacionesGrid {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

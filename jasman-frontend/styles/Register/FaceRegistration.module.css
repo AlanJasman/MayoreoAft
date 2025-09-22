@@ -1,0 +1,183 @@
+.faceRegistration {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .instructions {
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  
+  .cameraContainer {
+    margin: 0 auto;
+    max-width: 640px;
+  }
+  
+  .cameraWrapper {
+    position: relative;
+  }
+  
+  .camera {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .captureButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: #c50606;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+  }
+  
+  .captureButton:hover {
+    background-color: #ff0000;
+    transform: translateX(-50%) scale(1.05);
+  }
+  
+  .previewWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .previewImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .previewButtons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .retakeButton {
+    padding: 12px 24px;
+    background-color: #f5f5f5;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .retakeButton:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .submitButton {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover {
+    background-color: #218838;
+  }
+  
+  .submitButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .errorMessage {
+    color: #e74c3c;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fdecea;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+/* ... (estilos existentes) */
+
+.skipContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.skipButton {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border: none;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.buttonIconWrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.buttonIconSvg {
+  font-size: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.buttonIconSvgCopy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.skipButton:hover {
+  background-color: #000;
+}
+
+.skipButton:hover .buttonIconWrapper {
+  color: #000;
+}
+
+.skipButton:hover .buttonIconSvg:first-child {
+  transform: translate(150%, -150%);
+}
+
+.skipButton:hover .buttonIconSvgCopy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}

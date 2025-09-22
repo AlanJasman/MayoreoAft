@@ -1,0 +1,82 @@
+.panelContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.panel {
+  width: 100%;
+  text-align: center;
+}
+
+.logoContainer {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.8rem 0;
+  color: #64748b;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.dividerText {
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.linkButton {
+  display: block;
+  padding: 0.9rem;
+  border-radius: 8px;
+  background-color: rgb(0, 0, 0);
+  color: #fdfdfd;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.linkButton:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  color: black;
+  transform: translateY(-1px);
+}
+
+.secondaryLink {
+  color: #727272;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.secondaryLink:hover {
+  color: #1f1f1f;
+  text-decoration: underline;
+}

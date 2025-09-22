@@ -1,0 +1,344 @@
+/* ============================================= */
+/* MODAL DE CARGA DE PRECIOS - ESTILOS COMPLETOS */
+/* ============================================= */
+
+/* Contenedor principal del modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenido del modal */
+.modalContent {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Encabezado del modal */
+.modalTitle {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Grupos de formulario */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.95rem;
+}
+
+/* Input de archivo */
+.fileInput {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+  background-color: #f9f9f9;
+}
+
+.fileInput:hover {
+  border-color: #bbb;
+}
+
+.fileInput:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Texto de ayuda */
+.helpText {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Botones del modal */
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.cancelButton {
+  padding: 10px 18px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.saveButton {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.saveButton:hover {
+  background-color: #3d8b40;
+}
+
+.saveButton:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Mensajes de estado */
+.errorMessage {
+  color: #e74c3c;
+  background-color: #fdecea;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  border-left: 4px solid #e74c3c;
+}
+
+.successMessage {
+  color: #27ae60;
+  background-color: #e8f5e9;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  border-left: 4px solid #27ae60;
+}
+
+/* ================================= */
+/* ESTILOS PARA LOS RESULTADOS (ALERT) */
+/* ================================= */
+
+.alert {
+  position: relative;
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.alertSuccess {
+  background-color: #e8f5e9;
+  border-left: 5px solid #27ae60;
+  color: #27ae60;
+}
+
+.alertWarning {
+  background-color: #fff8e1;
+  border-left: 5px solid #f39c12;
+  color: #f39c12;
+}
+
+.alert h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.alert p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.closeAlert {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.closeAlert:hover {
+  opacity: 1;
+}
+
+/* Lista de SKUs */
+.skuList {
+  margin-top: 15px;
+}
+
+.skuContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.skuItem {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+/* ======================= */
+/* BOTÓN DE SUBIR ARCHIVOS */
+/* ======================= */
+
+.uploadButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.uploadButton:hover {
+  background-color: #3d8b40;
+  transform: translateY(-1px);
+}
+
+.uploadButton i {
+  font-size: 16px;
+}
+
+.instructions {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 4px solid #ff1500;
+}
+
+.instructions h4 {
+  margin-top: 0;
+  color: #ff1500;
+}
+
+.instructions ul {
+  padding-left: 20px;
+}
+
+.exampleTable {
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.exampleTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.exampleTable th, .exampleTable td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.exampleTable th {
+  background-color: #f2f2f2;
+}
+
+.filePreview {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+/* ================== */
+/* HEADER Y ALINEACIÓN */
+/* ================== */
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .uploadButton {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

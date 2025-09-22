@@ -1,0 +1,32 @@
+# === Archivos de entorno (importante)
+.env
+.env.*
+*.env
+
+# === === BACKEND (FastAPI, Python) ===
+jasman-backend/venv/
+jasman-backend/__pycache__/
+jasman-backend/**/*.pyc
+jasman-backend/.pytest_cache/
+jasman-backend/.mypy_cache/
+jasman-backend/.vscode/
+jasman-backend/.idea/
+jasman-backend/*.log
+jasman-backend/*.db
+jasman-backend/**/reloader-*.json
+
+# === === FRONTEND (Next.js / Node.js) ===
+jasman-frontend/node_modules/
+jasman-frontend/.next/
+jasman-frontend/out/
+jasman-frontend/.env.local
+jasman-frontend/*.log
+
+# === Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# === Archivos temporales
+*.tmp
+*.bak
+*.swp

@@ -1,0 +1,541 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.profileImageContainer {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #f0f0f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileInitials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #333333 0%, #666666 100%);
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userInfo h2 {
+  margin: 0 0 1rem 0;
+  color: #000000;
+  font-size: 1.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userInfo p {
+  margin: 0.75rem 0;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.userInfo strong {
+  color: #000000;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* Settings Sections */
+.settingsSection {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+}
+
+.settingsSection h3 {
+  margin: 0 0 1.5rem 0;
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.settingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.settingItem:last-child {
+  border-bottom: none;
+}
+
+.settingContent {
+  flex: 1;
+  margin-right: 1.5rem;
+}
+
+.settingItem h4 {
+  margin: 0 0 0.5rem 0;
+  color: #000000;
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settingItem p {
+  margin: 0;
+  color: #666666;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.toggleButton {
+  padding: 0.65rem 1.5rem;
+  background-color: #f0f0f0;
+  color: #555555;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.toggleButton.active {
+  background-color: #333333;
+  color: white;
+}
+
+.toggleButton:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.toggleButton.active:hover:not(:disabled) {
+  background-color: #000000;
+}
+
+.logoutButton {
+  padding: 1rem 1.5rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.logoutButton:hover {
+  background-color: #b71c1c;
+}
+
+/* Form Elements */
+.inputField {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  background-color: #fafafa;
+  color: #000000;
+  transition: all 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #555555;
+  box-shadow: 0 0 0 3px rgba(85, 85, 85, 0.1);
+}
+
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #000000;
+}
+
+/* Messages */
+.successMessage {
+  color: #388e3c;
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.errorMessage {
+  color: #d32f2f;
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Role Badges */
+.roleBadge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: 0.75rem;
+}
+
+.roleBadge.admin {
+  background-color: #ffeb3b;
+  color: #5d4037;
+}
+
+.roleBadge.user {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+/* Modal Styles */
+.modal {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.closeModalButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666666;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.closeModalButton:hover {
+  color: #d32f2f;
+}
+
+.stepContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  background-color: #ce0404;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.stepDescription {
+  color: #555555;
+  font-size: 0.925rem;
+  line-height: 1.5;
+}
+
+.apiKeyNote {
+  background: #f5f5f5;
+  border-left: 4px solid #d32f2f;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+.helpIconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d32f2f;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.helpIconButton:hover {
+  color: #b71c1c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .profileSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .profileImageContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .userInfo p {
+    justify-content: center;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+  }
+
+  .settingContent {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+}
+
+/* Error Modal Specific Styles */
+.errorContent {
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.errorActionButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.errorActionButton:hover {
+  background-color: #b71c1c;
+}
+
+/* Ajuste específico para el ícono de error en el título */
+.modalTitle .icon-error {
+  margin-right: 0.5rem;
+  color: #d32f2f;
+}
+
+/* Agrega esto a tu archivo CSS */
+.successButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+.successContinueButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+}
+
+.successContinueButton:hover {
+  background-color: #388e3c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.successContinueButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.successCloseButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #f5f5f5;
+  color: #555555;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 120px;
+}
+
+.successCloseButton:hover {
+  background-color: #eeeeee;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+  border-color: #cccccc;
+}
+
+.successCloseButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .successButtons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .successContinueButton,
+  .successCloseButton {
+    width: 100%;
+  }
+}

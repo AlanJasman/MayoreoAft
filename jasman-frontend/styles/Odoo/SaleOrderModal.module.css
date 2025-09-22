@@ -1,0 +1,726 @@
+/* Estructura principal del modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContainer {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado del modal */
+.modalHeader {
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.orderTitle {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+.orderPlaca {
+  margin: 0;
+  color: #ff0808;
+  font-size: 1rem;
+}
+
+.orderDate {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.headerActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Botones */
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.closeButton:hover {
+  color: #333;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.saveButton:hover {
+  background-color: #3e8e41;
+}
+
+.saveButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Contenido principal */
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Sección de detalles */
+.detailsSection {
+  flex: 1;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.titleDecorator {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  background-color: #ec0000;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.orderTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.orderTable th, .orderTable td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.orderTable th {
+  background-color: #000000;
+  font-weight: 600;
+  color: #e6e6e6;
+}
+
+.orderTable tr:hover td {
+  background-color: #f9f9f9;
+}
+
+.noData {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.summaryContainer {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eaeaea;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Galería de imágenes */
+.imagesSection {
+  flex: 1;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.imageThumbnail {
+  position: relative;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.imageThumbnail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageThumbnail.active {
+  border: 2px solid #ec0000;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  background-color: #f5f5f5;
+}
+
+.imageWrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.uploadPlaceholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.uploadPlaceholder:hover {
+  background-color: #e0e0e0;
+}
+
+.imageFallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  background-color: #f5f5f5;
+}
+
+.imageThumbnail p {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.uploadBadge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #FF9800;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Vista previa de imagen */
+.imagePreviewOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagePreviewContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.closePreviewButton {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.previewCaption {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Estados de carga y error */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #666;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #ec0000;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.errorState {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: #ffebee;
+  border-radius: 4px;
+  color: #d32f2f;
+  margin: 15px 0;
+}
+
+/* Barra de progreso */
+.uploadProgress {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 20px;
+  background-color: #4CAF50;
+  transition: width 0.3s;
+}
+
+.uploadProgress span {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Interfaz de cámara */
+.cameraContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cameraVideo {
+  width: 100%;
+  max-width: 500px;
+  max-height: 70vh;
+  object-fit: cover;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cameraButtonContainer {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cameraActionButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cameraActionButton.secondary {
+  background-color: #ec0000;
+}
+
+.cameraActionButton.danger {
+  background-color: #f44336;
+}
+
+.cameraActionButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Menú de selección de cámara */
+.cameraMenuContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cameraMenuContent {
+  background-color: #2c3e50;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cameraMenuTitle {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.cameraMenuButton {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cameraMenuButton.primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cameraMenuButton.secondary {
+  background-color: #ec0000;
+  color: white;
+}
+
+.cameraMenuButton.danger {
+  background-color: #f44336;
+  color: white;
+}
+
+.cameraMenuButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.cameraMenuMessage {
+  color: #ecf0f1;
+  text-align: center;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContainer {
+    max-height: 95vh;
+  }
+  
+  .imageGallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+  
+  .orderTable th, .orderTable td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* SaleOrderModal.module.css */
+
+/* Añade estos estilos al final de tu archivo existente */
+
+/* Contenedor principal de la sección */
+.section {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* Título de sección */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+/* Grid para los inputs de profundidad */
+.tireDepthGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Contenedor de cada input */
+.tireInput {
+  position: relative;
+}
+
+/* Estilos para las etiquetas */
+.tireInput label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* Estilos para los inputs */
+.tireInput input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #2d3748;
+  transition: all 0.2s ease;
+}
+
+.tireInput input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.tireInput input::placeholder {
+  color: #a0aec0;
+}
+
+/* Indicador de profundidad */
+.depthIndicator {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.depthBar {
+  flex-grow: 1;
+  height: 6px;
+  background-color: #edf2f7;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.depthBar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--width);
+}
+
+/* Colores para los estados de desgaste */
+.safe {
+  background-color: #38a169; /* Verde */
+}
+
+.warning {
+  background-color: #dd6b20; /* Ámbar */
+}
+
+.danger {
+  background-color: #e53e3e; /* Rojo */
+}
+
+/* Mensajes de error */
+.errorMessage {
+  background-color: #fff5f5;
+  color: #c53030;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  border-left: 4px solid #e53e3e;
+}
+
+.errorMessage svg {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Botón de guardado */
+.saveButton {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.saveButton:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.saveButton:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.saveButton svg {
+  margin-right: 0.5rem;
+}
+
+/* Spinner para estados de carga */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .tireDepthGrid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+  }
+  
+  .section {
+      padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tireInput input {
+      padding: 0.65rem;
+  }
+  
+  .saveButton {
+      padding: 0.65rem 1.2rem;
+      font-size: 0.9rem;
+  }
+}

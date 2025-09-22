@@ -1,0 +1,141 @@
+.registerForm {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputLabel {
+  font-size: 0.85rem;
+  color: #2d3436;
+  font-weight: 600;
+}
+
+.inputLabel::after {
+  content: '*';
+  color: #e74c3c;
+  margin-left: 0.2rem;
+}
+
+.optionalLabel::after {
+  content: ' (opcional)';
+  color: #95a5a6;
+  font-weight: normal;
+}
+
+.inputField {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  border: 1.5px solid #dfe6e9;
+  border-radius: 8px;
+  background: #fdfdfd;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.inputField.error {
+  border-color: #e74c3c;
+  background-color: #fff6f6;
+}
+
+.errorText {
+  font-size: 0.75rem;
+  color: #e74c3c;
+}
+
+.errorMessage {
+  background: #fdecea;
+  color: #c0392b;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-left: 4px solid #e74c3c;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #d62c1a, #96281b);
+  transform: translateY(-1px);
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.backLink {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #34495e;
+  text-decoration: underline;
+}
+
+.passwordStrength {
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+.passwordStrength.weak {
+  color: #e74c3c;
+}
+.passwordStrength.medium {
+  color: #f39c12;
+}
+.passwordStrength.strong {
+  color: #27ae60;
+}

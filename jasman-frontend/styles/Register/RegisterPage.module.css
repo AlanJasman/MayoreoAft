@@ -1,0 +1,85 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f72d2d 0%, #2541b2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+.registerLayout {
+  display: contents;
+}
+
+.imageSection {
+  position: relative;
+  background-image: url('/register-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f72d2d 0%, #6d1904 100%);
+}
+
+.imageContent {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.imageContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.imageContent p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.formSection {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+  }
+
+  .imageSection {
+    display: none;
+  }
+
+  .formSection {
+    padding: 1.5rem;
+  }
+}

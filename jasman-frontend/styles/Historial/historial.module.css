@@ -1,0 +1,376 @@
+/* Estilos modernizados para Historial de Servicios */
+.dashboardContainer {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.mainContent {
+  padding: 1.5rem;
+  margin-left: 5px; /* Ajustar según el ancho de tu navegación */
+  transition: margin 0.3s ease;
+}
+
+.historyContainer {
+  max-width: 90%;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos y texto */
+.historyContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.historyContainer h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #ec0000;
+}
+
+.vehicleInfo h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  color: #ec0000;
+  font-weight: 600;
+}
+
+/* Formulario de búsqueda */
+.searchSection {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.searchSection label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333333;
+  font-size: 0.95rem;
+}
+
+.searchSection input {
+  width: 97%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.searchSection input:focus {
+  outline: none;
+  border-color: #ec0000;
+  box-shadow: 0 0 0 2px rgba(236, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.searchSection input::placeholder {
+  color: #999999;
+}
+
+.loadingText {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  font-size: 0.85rem;
+  color: #ef0b0b;
+}
+
+/* Lista de vehículos */
+.vehiclesList {
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.vehiclesList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vehiclesList li {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.vehiclesList li:last-child {
+  border-bottom: none;
+}
+
+.vehiclesList li:hover {
+  background-color: #f5f5f5;
+}
+
+.vehiclesList li strong {
+  color: #ec0000;
+  font-weight: 600;
+}
+
+/* Información del vehículo */
+.vehicleInfo {
+  background: #f9f9f9;
+  padding: 1.75rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ec0000;
+}
+
+.vehicleDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.vehicleDetails p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.vehicleDetails span {
+  font-weight: 600;
+  color: #333333;
+  display: inline-block;
+  min-width: 100px;
+}
+
+/* Botón de búsqueda */
+.searchForm {
+  margin-bottom: 2rem;
+}
+
+.searchForm button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #ec0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.searchForm button:hover:not(:disabled) {
+  background-color: #c40000;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(236, 0, 0, 0.2);
+}
+
+.searchForm button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.searchForm button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.loadingButton {
+  position: relative;
+  color: transparent !important;
+}
+
+.loadingButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Mensajes de error */
+.errorMessage {
+  color: #ec0000;
+  background-color: #fff0f0;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  border: 1px solid #ffd6d6;
+  font-weight: 500;
+}
+
+.errorMessage strong {
+  font-weight: 600;
+}
+
+/* Tabla de servicios */
+.servicesTable {
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+}
+
+.servicesTable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 600px;
+}
+
+.servicesTable th {
+  background-color: #000000;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  padding: 1rem 1.25rem;
+}
+
+.servicesTable td {
+  padding: 0.9rem 1.25rem;
+  color: #333333;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.servicesTable tr:last-child td {
+  border-bottom: none;
+}
+
+.servicesTable tr:hover {
+  background-color: #f9f9f9;
+}
+
+.servicesTable tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.servicesTable tr:nth-child(even):hover {
+  background-color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 1.25rem;
+  }
+  
+  .historyContainer {
+    padding: 1.5rem;
+  }
+  
+  .vehicleDetails {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .historyContainer {
+    padding: 1.25rem;
+  }
+  
+  .historyContainer h1 {
+    font-size: 1.75rem;
+  }
+  
+  .vehicleInfo {
+    padding: 1.25rem;
+  }
+  
+  .vehicleDetails {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .servicesTable th, 
+  .servicesTable td {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1rem;
+  }
+  
+  .historyContainer {
+    padding: 1rem;
+  }
+  
+  .historyContainer h1 {
+    font-size: 1.5rem;
+  }
+  
+  .searchSection input {
+    padding: 0.75rem;
+  }
+  
+  .searchForm button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  letter-spacing: normal;
+  text-transform: none;
+  }
+  
+  .servicesTable {
+    border-radius: 6px;
+  }
+  
+  .servicesTable th, 
+  .servicesTable td {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+.radioSelector {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.radioSelector label {
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.radioSelector input[type="radio"] {
+  accent-color: #ec0000;
+  width: 18px;
+  height: 18px;
+}

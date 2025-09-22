@@ -1,0 +1,162 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #f9fafb;
+  flex-shrink: 0;
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  color: #3a3a3a;
+  font-weight: 600;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #7a7a7a;
+  cursor: pointer;
+  padding: 0 0 4px 0;
+  line-height: 1;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #f0f0f0;
+  color: #f84141;
+}
+
+.tableContainer {
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(90vh - 120px);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: #f6f7f9;
+  color: #343434;
+  font-weight: 600;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+}
+
+.center {
+  text-align: center;
+}
+
+.totalRow td {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.emptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.empty {
+  color: #666;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Scrollbar personalizada */
+.tableContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modalHeader {
+    padding: 14px 20px;
+  }
+  
+  .modalTitle {
+    font-size: 1.2rem;
+  }
+  
+  .table th, 
+  .table td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .tableContainer {
+    max-height: calc(95vh - 110px);
+  }
+}

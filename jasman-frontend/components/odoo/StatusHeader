@@ -1,0 +1,22 @@
+import styles from '../../styles/Odoo/StatusHeader.module.css';
+
+const StatusHeader = ({ counts, compact = false }) => {
+  return (
+    <div className={`${styles.statusHeader} ${compact ? styles.compact : ''}`}>
+      <div className={styles.statusItem}>
+        <span className={`${styles.statusCircle} ${styles.red}`}>{counts.red}</span>
+        {!compact && <span className={styles.statusLabel}>Rojo</span>}
+      </div>
+      <div className={styles.statusItem}>
+        <span className={`${styles.statusCircle} ${styles.yellow}`}>{counts.yellow}</span>
+        {!compact && <span className={styles.statusLabel}>Amarillo</span>}
+      </div>
+      <div className={styles.statusItem}>
+        <span className={`${styles.statusCircle} ${styles.green}`}>{counts.green}</span>
+        {!compact && <span className={styles.statusLabel}>Verde</span>}
+      </div>
+    </div>
+  );
+};
+
+export default StatusHeader;
