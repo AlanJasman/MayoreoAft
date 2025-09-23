@@ -182,8 +182,7 @@ export default function InventorySearch({
             {Object.entries(searchResults.proveedores).map(([proveedor, info]) => (
               <div key={proveedor} className={styles.proveedorCard}>
                 <h4>{proveedor}</h4>
-                <p><strong>Última actualización:</strong> {info.update || 'N/A'}</p>
-                <p><strong>Creado:</strong> {info.created_at ? new Date(info.created_at).toLocaleDateString() : 'N/A'}</p>
+                <p><strong>Última actualización:</strong> {info.created_at ? new Date(info.created_at).toLocaleDateString() : 'N/A'}</p>
               </div>
             ))}
           </div>

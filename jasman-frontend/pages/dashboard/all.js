@@ -123,7 +123,7 @@ export default function AllInventory() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Inventario Completo - JasmanApp</title>
+          <title>Inventario Completo - All for Tires</title>
         </Head>
 
         <Navigation />

@@ -107,7 +107,7 @@ export default function Dashboard() {
     <ProtectedRoute>
       <div className={styles.dashboardContainer}>
         <Head>
-          <title>Mi Perfil - Mayoreo Jasman</title>
+          <title>Mi Perfil - Mayoreo All for Tires</title>
           <meta name="description" content="Panel de control de usuario" />
         </Head>
 

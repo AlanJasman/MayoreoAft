@@ -48,8 +48,8 @@ export default function DynamicBreadcrumbs() {
       <Head>
         <title>
           {pathSegments.length > 0 
-            ? `${getFriendlyName(pathSegments[pathSegments.length - 1])} - JasmanApp` 
-            : 'JasmanApp'}
+            ? `${getFriendlyName(pathSegments[pathSegments.length - 1])} - All For Tires` 
+            : 'All For Tires'}
         </title>
       </Head>
 

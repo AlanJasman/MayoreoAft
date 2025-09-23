@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f72d2d 0%, #2541b2 100%);
+  background: linear-gradient(135deg, #f2a138 0%, #f0a13a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #f72d2d 0%, #6d1904 100%);
+  background: linear-gradient(135deg, #767676 0%, #3a3a3a 100%);
 }
 
 .imageContent {

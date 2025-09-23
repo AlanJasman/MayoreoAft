@@ -171,7 +171,7 @@ export default function InventoryDashboard() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Existencias - Mayoreo</title>
+          <title>Existencias - Mayoreo All for Tires</title>
         </Head>
 
         <Navigation />

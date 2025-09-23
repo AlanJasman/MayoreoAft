@@ -42,7 +42,7 @@ export default function Navigation() {
       {/* Logo */}
       <div className={styles.logoContainer}>
         <Link href="/dashboard" className={styles.logoLink} onClick={closeMenu}>
-          <span className={styles.logoText}>Mayoreo Jasman</span>
+          <span className={styles.logoText}>Mayoreo All For Tires</span>
         </Link>
       </div>
 

@@ -56,8 +56,8 @@
 
 .inputField:focus {
   outline: none;
-  border-color: #e74c3c;
-  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+  border-color: #f2a138;
+  box-shadow: 0 0 0 2px rgba(242, 161, 56, 0.2);
 }
 
 .inputField.error {
@@ -81,7 +81,7 @@
 }
 
 .submitButton {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: #f2a138;
   color: white;
   font-weight: 600;
   font-size: 0.95rem;
@@ -93,7 +93,7 @@
 }
 
 .submitButton:hover {
-  background: linear-gradient(135deg, #d62c1a, #96281b);
+  background: #dd7d00;
   transform: translateY(-1px);
 }
 

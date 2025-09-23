@@ -34,7 +34,7 @@
 
 .searchLabel::after {
   content: ' *';
-  color: #ec0000;
+  color: #f2a138;
   margin-left: 0.25rem;
 }
 
@@ -50,7 +50,7 @@
 
 .searchInput:focus {
   outline: none;
-  border-color: #ec0000;
+  border-color: #f2a138;
   box-shadow: 0 0 0 3px rgba(236, 0, 0, 0.1);
   background-color: #ffffff;
 }
@@ -72,7 +72,7 @@
 }
 
 .searchButton {
-  background-color: #000000;
+  background-color: #3f3f3f;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -90,7 +90,7 @@
 }
 
 .searchButton:hover:not(:disabled) {
-  background-color: #ec0000;
+  background-color: #f2a138;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

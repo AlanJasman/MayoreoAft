@@ -11,14 +11,14 @@ export default function RegisterPage() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Registro - Mayoreo JasmanApp</title>
+        <title>Registro - Mayoreo All For Tires</title>
       </Head>
 
       <main className={styles.main}>
         <div className={styles.registerLayout}>
           <div className={styles.imageSection}>
             <div className={styles.imageContent}>
-              <h2>Únete a Mayoreo JasmanApp</h2>
+              <h2>Únete a Mayoreo All For Tires</h2>
               <p>Regístrate para acceder a todos nuestros servicios</p>
             </div>
           </div>

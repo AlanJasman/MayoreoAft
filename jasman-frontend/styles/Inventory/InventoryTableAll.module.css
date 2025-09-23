@@ -130,7 +130,7 @@
 }
 
 .brandTag {
-  background: #fc1111;
+  background: #f2a138;
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -515,9 +515,9 @@
 }
 
 .activeFilter {
-  background-color: #ec0000;
+  background-color: #f2a138;
   color: white;
-  border-color: #ec0000;
+  border-color: #f2a138;
 }
 /* Responsive */
 @media screen and (max-width: 768px) {

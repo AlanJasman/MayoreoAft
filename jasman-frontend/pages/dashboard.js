@@ -15,7 +15,7 @@ export default function Dashboard() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Dashboard - JasmanApp</title>
+          <title>Dashboard - Mayoreo All for Tires</title>
         </Head>
 
         <Navigation />

@@ -196,7 +196,7 @@ const handleUserUpdate = async (updatedUser) => {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Usuarios - JasmanApp</title>
+          <title>Usuarios - All For Tires</title>
         </Head>
 
         <Navigation />

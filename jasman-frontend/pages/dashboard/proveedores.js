@@ -90,7 +90,7 @@ export default function SupplierDashboard() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Existencias Proveedores - JasmanApp</title>
+          <title>Existencias Proveedores - All For Tires</title>
         </Head>
 
         <Navigation />

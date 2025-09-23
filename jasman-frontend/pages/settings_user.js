@@ -26,7 +26,7 @@ export default function SettingsUser() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Validación Pendiente - JasmanApp</title>
+          <title>Validación Pendiente - All for Tires</title>
         </Head>
 
         <div className={styles.waitingContainer}>

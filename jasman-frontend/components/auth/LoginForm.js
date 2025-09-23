@@ -143,9 +143,7 @@ export default function LoginForm() {
           <Link href="/register" className={styles.linkButton}>
             Crear una cuenta
           </Link>
-          <Link href="/forgot-password" className={styles.secondaryLink}>
-            ¿Olvidaste tu contraseña?
-          </Link>
+          
         </div>
       </form>
     </div>

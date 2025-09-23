@@ -54,7 +54,7 @@
   justify-content: center;
   font-size: 3rem;
   font-weight: 600;
-  border: 4px solid #ec0000;
+  border: 4px solid #f2a138;
 }
 
 .profileInfo {
@@ -83,7 +83,7 @@
 }
 
 .adminBadge {
-  background-color: #ec0000;
+  background-color: #f2a138;
   color: white;
 }
 
@@ -107,7 +107,7 @@
 
 .infoIcon {
   flex-shrink: 0;
-  color: #ec0000;
+  color: #f2a138;
   font-size: 1.25rem;
   margin-top: 0.25rem;
 }
@@ -145,7 +145,7 @@
 }
 
 .sectionIcon {
-  color: #ec0000;
+  color: #f2a138;
 }
 
 .settingItem {
@@ -204,7 +204,7 @@
 }
 
 .toggleActive {
-  background-color: #ec0000;
+  background-color: #f2a138;
   color: white;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .editButton {
-  background-color: #ea3333;
+  background-color: #3398ea;
   color: white;
   border: none;
   padding: 0.5rem 1rem;

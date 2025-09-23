@@ -18,7 +18,7 @@
 }
 
 .waitingIcon {
-  color: #df4a4a;
+  color: #f2a138;
   margin-bottom: 1.5rem;
 }
 
@@ -62,7 +62,7 @@
   background: #f8f9fa;
   border-radius: 8px;
   text-align: left;
-  border-left: 4px solid #df4a4a;
+  border-left: 4px solid #f2a138;
 }
 
 .userInfo h3 {

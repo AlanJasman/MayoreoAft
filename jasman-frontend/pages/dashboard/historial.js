@@ -113,7 +113,7 @@ export default function Historial() {
     <ProtectedRoute>
       <div className={styles.dashboardContainer}>
         <Head>
-          <title>Historial de Servicios - JasmanApp</title>
+          <title>Historial de Servicios - All For Tires</title>
         </Head>
   
         <Navigation />

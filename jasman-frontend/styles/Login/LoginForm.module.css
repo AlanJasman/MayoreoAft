@@ -65,8 +65,8 @@
 
 .inputField:focus {
   outline: none;
-  border-color: #d62c1a;
-  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+  border-color: #f2a138;
+  box-shadow: 0 0 0 3px rgba(242, 161, 56, 0.1);
   background: white;
 }
 
@@ -95,7 +95,7 @@
 .loginButton {
   width: 100%;
   padding: 1.1rem;
-  background: #d62c1a;
+  background: #f2a138;
   color: white;
   border: none;
   border-radius: 8px;
@@ -108,7 +108,7 @@
 }
 
 .loginButton:hover {
-  background: #8d0202;
+  background: #dd7d00;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(74, 108, 247, 0.3);
 }

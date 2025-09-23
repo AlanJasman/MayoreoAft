@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <div className={styles.pageWrapper}>
       <Head>
-        <title>Mayoreo Jasman</title>
+        <title>Mayoreo AFT</title>
       </Head>
 
       <main className={styles.main}>
         <div className={styles.loginLayout}>
           <div className={styles.imageSection}>
             <div className={styles.imageContent}>
-              <h2>Bienvenido a Mayoreo Jasman</h2>
-              <p>Cuidamos tu auto, cuidamos de ti.</p>
+              <h2>Bienvenido a Mayoreo AFT</h2>
+              <p>Equipos para Llantera y Taller.</p>
             </div>
           </div>
           <div className={styles.formSection}>

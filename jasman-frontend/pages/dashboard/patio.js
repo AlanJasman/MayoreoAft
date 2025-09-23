@@ -195,7 +195,7 @@ console.log("Contenido completo de user:", user);
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Existencias - JasmanApp</title>
+          <title>Existencias - All For Tires</title>
         </Head>
 
         <Navigation />
