@@ -286,7 +286,7 @@ class SupabaseDBService:
 
     def update_product_price(self, sku: str, price: float) -> bool:
         try:
-            response = self.client.table("product_prices") \
+            response = self.client.table("product_prices_aft") \
                 .upsert({
                     "sku": sku,
                     "price": price,

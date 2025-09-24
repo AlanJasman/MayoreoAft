@@ -291,7 +291,7 @@ async def get_reporte_zonas_detallado(
 
         # --- Precios para products ---
         skus_products = [str(p['sku']) for p in products_data if p.get('sku')]
-        prices_response = supabase.table('product_prices').select('*').in_('sku', skus_products).execute()
+        prices_response = supabase.table('product_prices_aft').select('*').in_('sku', skus_products).execute()
         prices_dict = {str(p['sku']): p['price'] for p in prices_response.data}
 
         # --- ExistenciaPlanta ---
@@ -307,7 +307,7 @@ async def get_reporte_zonas_detallado(
         # --- Precios para ExistenciaPlanta ---
         skus_existencia = [str(e['sku']) for e in existencia_data if e.get('sku')]
         all_skus = list(set(skus_products + skus_existencia))
-        precios_extra = supabase.table('product_prices').select('*').in_('sku', all_skus).execute()
+        precios_extra = supabase.table('product_prices_aft').select('*').in_('sku', all_skus).execute()
         prices_dict.update({str(p['sku']): p['price'] for p in precios_extra.data})
 
         # --- Armar reporte ---
@@ -514,7 +514,7 @@ async def export_supabase_inventory_csv(
 
         # 2. Obtener todos los precios
         prices = {}
-        prices_response = supabase.table('product_prices').select('sku, price').execute()
+        prices_response = supabase.table('product_prices_aft').select('sku, price').execute()
         for price in prices_response.data:
             prices[price['sku']] = price['price']
 

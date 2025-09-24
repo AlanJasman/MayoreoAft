@@ -96,7 +96,7 @@ async def buscar_productos(
         skus = [product["sku"] for product in response.data if product.get("sku")]
         
         # Buscamos los precios correspondientes
-        prices_response = supabase.table("product_prices")\
+        prices_response = supabase.table("product_prices_aft")\
             .select("sku, price")\
             .in_("sku", skus)\
             .execute()

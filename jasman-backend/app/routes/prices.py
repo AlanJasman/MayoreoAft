@@ -71,7 +71,7 @@ async def upload_prices(
                     continue
                 
                 # Actualizar en Supabase
-                response = supabase_db_service.client.table("product_prices") \
+                response = supabase_db_service.client.table("product_prices_aft") \
                     .upsert({
                         "sku": update['sku'],
                         "price": float(update['price']),
