@@ -324,19 +324,18 @@
 
 
 .passwordButton {
-  background-color: #ffc107;
-  color: #000;
+  background-color: #47a003;
+  color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 12px;
-  margin: 0 4px;
-  transition: background-color 0.2s;
+  font-size: 0.85rem;
+  transition: background-color 0.3s;
 }
 
 .passwordButton:hover {
-  background-color: #e0a800;
+  background-color: #316f01;
 }
 
 .passwordButton:disabled {
@@ -497,26 +496,6 @@
 }
 
 /* Botón de cambiar contraseña en la tabla */
-.passwordButton {
-  background-color: #ffc107;
-  color: #000;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  margin: 0 4px;
-  transition: background-color 0.2s;
-}
-
-.passwordButton:hover {
-  background-color: #e0a800;
-}
-
-.passwordButton:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
 
 .buttonGroup {
   display: flex;

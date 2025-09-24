@@ -131,7 +131,6 @@ const UsersTable = ({
                   <th className={styles.th}>Empresa</th>
                   <th className={styles.th}>Rol</th>
                   <th className={styles.th}>Validado</th>
-                  <th className={styles.th}>Fecha Creación</th>
                   <th className={styles.th}>Acciones</th>
                 </tr>
               </thead>
@@ -164,7 +163,6 @@ const UsersTable = ({
                           <span className={styles.notValidated}>No</span>
                         )}
                       </td>
-                      <td className={styles.td}>{formatDate(usuario.creado_en)}</td>
                       <td className={styles.td}>
                         <div className={styles.buttonGroup}>
                           <button 
@@ -179,7 +177,7 @@ const UsersTable = ({
                             className={styles.passwordButton}
                             onClick={() => handleChangePassword(usuario)}
                           >
-                            Cambiar Pass
+                            Contraseña
                           </button>
                           
                           {currentUserRole === 'admin' && (
