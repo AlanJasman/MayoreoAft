@@ -4,6 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { IoLogOut, IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { FaCartPlus } from "react-icons/fa";
+import Image from "next/image";
 import styles from "../../styles/Components/Navigation.module.css";
 
 export default function Navigation() {
@@ -40,10 +41,16 @@ export default function Navigation() {
       </button>
 
       {/* Logo */}
-      <div className={styles.logoContainer}>
-        <Link href="/dashboard" className={styles.logoLink} onClick={closeMenu}>
-          <span className={styles.logoText}>Mayoreo All For Tires</span>
-        </Link>
+            <div className={styles.logoContainer}>
+              <Link href="/dashboard" className={styles.logoLink} onClick={closeMenu}>
+                <Image
+                  src="/img/logo1.png"
+                  alt="Logo All For Tires"
+                  width={190}   // ajusta según lo necesites
+                  height={40}   // ajusta según lo necesites
+                  priority      // optimiza para carga rápida
+                />
+              </Link>
       </div>
 
       {/* Menú de navegación */}

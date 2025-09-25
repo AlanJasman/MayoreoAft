@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Inicializa la app FastAPI
-app = FastAPI(title="Mayoreo Jasman APP", version="1.0.0")
+app = FastAPI(title="Mayoreo AFT", version="1.0.0")
 
 # Zona horaria de México
 mexico_tz = pytz.timezone('America/Mexico_City')
