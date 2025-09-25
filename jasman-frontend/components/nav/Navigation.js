@@ -46,7 +46,7 @@ export default function Navigation() {
                 <Image
                   src="/img/logo1.png"
                   alt="Logo All For Tires"
-                  width={190}   // ajusta según lo necesites
+                  width={180}   // ajusta según lo necesites
                   height={35}   // ajusta según lo necesites
                   priority      // optimiza para carga rápida
                 />
