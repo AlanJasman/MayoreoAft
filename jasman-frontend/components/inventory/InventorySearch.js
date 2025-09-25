@@ -175,19 +175,24 @@ export default function InventorySearch({
         )}
       </form>
 
-      {isNotClient && searchResults?.proveedores && (
-        <div className={styles.proveedoresSection}>
-          <h3>Información de Proveedores</h3>
-          <div className={styles.proveedoresGrid}>
-            {Object.entries(searchResults.proveedores).map(([proveedor, info]) => (
-              <div key={proveedor} className={styles.proveedorCard}>
-                <h4>{proveedor}</h4>
-                <p><strong>Última actualización:</strong> {info.created_at ? new Date(info.created_at).toLocaleDateString() : 'N/A'}</p>
-              </div>
-            ))}
-          </div>
+      {user?.role === "admin" && user?.zona !== "atizapan" && searchResults?.proveedores && (
+      <div className={styles.proveedoresSection}>
+        <h3>Información de Proveedores</h3>
+        <div className={styles.proveedoresGrid}>
+          {Object.entries(searchResults.proveedores).map(([proveedor, info]) => (
+            <div key={proveedor} className={styles.proveedorCard}>
+              <h4>{proveedor}</h4>
+              <p>
+                <strong>Última actualización:</strong>{" "}
+                {info.created_at
+                  ? new Date(info.created_at).toLocaleDateString()
+                  : "N/A"}
+              </p>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
+    )}
     </div>
   );
 }
