@@ -18,10 +18,12 @@ export default async function handler(req, res) {
     const response = await fetch(apiUrl, {
       headers: {
         'Authorization': req.headers.authorization || '',
+        'X-App-Version': req.headers['x-app-version'] || 'aft'  // ← RECIBE Y PASA EL HEADER
       },
     });
 
     console.log('Token enviado al backend:', req.headers.authorization);
+    console.log('App Version enviada:', req.headers['x-app-version'] || 'aft');  // ← Para debug
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

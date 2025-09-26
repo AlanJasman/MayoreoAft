@@ -72,6 +72,7 @@ export default function PriceUploadModal({ onClose, onUpload }) {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
+          'X-App-Version': 'aft'
         },
         body: formData
       });

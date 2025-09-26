@@ -81,7 +81,7 @@ export default function InventoryDashboard() {
       }
 
       const res = await fetch(`/api/inventory/search?${query}`, {
-        headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}`, 'X-App-Version': 'aft' }
       });
 
       if (!res.ok) throw new Error("Error en el servidor");

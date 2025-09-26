@@ -79,7 +79,11 @@ export default function CreateQuotationPage() {
       url.searchParams.append('page', '1');
       url.searchParams.append('per_page', '10');
 
-      const response = await fetchWithAuth(url.toString());
+      const response = await fetchWithAuth(url.toString(), {
+        headers: {
+          'X-App-Version': 'aft'  // ← AÑADE ESTA LÍNEA
+        }
+      });
       const { data } = await response.json();
 
       return data.map(product => ({

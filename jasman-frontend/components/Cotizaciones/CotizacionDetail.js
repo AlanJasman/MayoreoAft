@@ -67,6 +67,7 @@ export default function CotizacionDetail({ cotizacion, onBack, user, onUpdate })
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
+          'X-App-Version': 'aft'
         }
       });
 
