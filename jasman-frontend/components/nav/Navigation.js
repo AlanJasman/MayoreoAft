@@ -65,7 +65,8 @@ export default function Navigation() {
           Inventario
         </Link>
         
-        {hasAdminAccess() && user.role !== 'vendedor' && (
+        {(hasAdminAccess() || user?.role === 'vendedor') && (
+
           <Link
             href="/admin/admin"
             className={`${styles.navLink} ${
