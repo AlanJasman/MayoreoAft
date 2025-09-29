@@ -13,7 +13,6 @@ export default function PriceUploadModal({ onClose, onUpload }) {
     setFile(selectedFile);
     setMessage(null);
     
-    // Mostrar vista previa del archivo
     if (selectedFile) {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -29,27 +28,6 @@ export default function PriceUploadModal({ onClose, onUpload }) {
     }
   };
 
-  const validateFileStructure = async (file) => {
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-      
-      reader.onload = (e) => {
-        const content = e.target.result;
-        
-        // Simple validación - podrías implementar una más robusta
-        const lines = content.split('\n');
-        const headers = lines[0].split(',').map(h => h.trim().toLowerCase());
-        
-        const hasSku = headers.includes('sku');
-        const hasPrice = headers.includes('price');
-        
-        resolve(hasSku && hasPrice);
-      };
-      
-      reader.readAsText(file);
-    });
-  };
-
   const handleSubmit = async () => {
     if (!file) {
       setMessage('Por favor selecciona un archivo');
@@ -58,12 +36,6 @@ export default function PriceUploadModal({ onClose, onUpload }) {
 
     setLoading(true);
     try {
-      // Validar estructura del archivo
-      const isValid = await validateFileStructure(file);
-      if (!isValid) {
-        throw new Error('El archivo debe contener al menos las columnas "sku" y "price"');
-      }
-
       const formData = new FormData();
       formData.append('file', file);
 
@@ -78,7 +50,7 @@ export default function PriceUploadModal({ onClose, onUpload }) {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.message || 'Error al subir archivo');
+      if (!response.ok) throw new Error(data.detail || 'Error al subir archivo');
 
       onUpload(data);
       setMessage('Archivo procesado correctamente');
