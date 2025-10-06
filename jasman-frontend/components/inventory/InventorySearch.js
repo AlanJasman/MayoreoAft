@@ -30,14 +30,40 @@ export default function InventorySearch({
   const handleChange = (e) => {
     let value = e.target.value;
     
-    if (e.target.name === 'rin') {
-      if (value.length > 4) return;
-      if (value.startsWith('R')) {
-        value = 'R' + value.substring(1).replace(/[^0-9]/g, '');
-      } else {
-        value = value.replace(/[^0-9]/g, '');
+    if (e.target.name === 'piso') {
+      // MODIFICACIÓN: Permitir decimales en piso
+      // Permitir números, punto y coma (para decimales)
+      value = value.replace(/[^0-9.,]/g, '');
+      
+      // Reemplazar coma por punto para consistencia
+      value = value.replace(',', '.');
+      
+      // Limitar longitud total
+      if (value.length > 6) return;
+      
+      // Validar que solo haya un punto decimal
+      const decimalParts = value.split('.');
+      if (decimalParts.length > 2) {
+        value = decimalParts[0] + '.' + decimalParts.slice(1).join('');
       }
-    } else {
+      
+    } else if (e.target.name === 'rin') {
+      // MODIFICACIÓN: Permitir decimales en rin también
+      // Permitir "R" opcional y números con decimales
+      if (value.startsWith('R') || value.startsWith('r')) {
+        // Si empieza con R, mantener la R y permitir decimales después
+        const rest = value.substring(1);
+        const cleanedRest = rest.replace(/[^0-9.,]/g, '');
+        value = 'R' + cleanedRest.replace(',', '.');
+      } else {
+        // Si no empieza con R, solo números y decimales
+        value = value.replace(/[^0-9.,]/g, '').replace(',', '.');
+      }
+      
+      // Limitar longitud
+      if (value.length > 6) return;
+      
+    } else if (e.target.name === 'serie') {
       if (value.length > 4) return;
       value = value.replace(/[^0-9]/g, '');
     }
@@ -54,6 +80,13 @@ export default function InventorySearch({
     const paramsToSend = Object.fromEntries(
       Object.entries(searchParams)
         .filter(([_, value]) => value.trim() !== '')
+        .map(([key, value]) => {
+          // MODIFICACIÓN: Para piso y rin, asegurar formato consistente
+          if ((key === 'piso' || key === 'rin') && value) {
+            return [key, value.replace(',', '.')]; // Siempre usar punto como separador decimal
+          }
+          return [key, value];
+        })
     );
     
     onSearch(paramsToSend);
@@ -116,9 +149,9 @@ export default function InventorySearch({
               value={searchParams.piso}
               onChange={handleChange}
               className={`${styles.searchInput} ${errors?.piso ? styles.errorInput : ''}`}
-              placeholder="195"
-              maxLength={4}
-              inputMode="numeric"
+              placeholder="195, 195.5, 195.50"
+              maxLength={6}
+              inputMode="decimal"
             />
             {errors?.piso && <span className={styles.errorText}>{errors.piso}</span>}
           </div>        
@@ -139,13 +172,14 @@ export default function InventorySearch({
           <div className={styles.searchField}>
             <label className={styles.searchLabel}>Rin</label>
             <input
-              type="number"
+              type="text"
               name="rin"
               value={searchParams.rin}
               onChange={handleChange}
               className={`${styles.searchInput} ${errors?.rin ? styles.errorInput : ''}`}
-              placeholder="15"
-              step="0.1"
+              placeholder="16, 16.5"
+              maxLength={6}
+              inputMode="decimal"
             />
             {errors?.rin && <span className={styles.errorText}>{errors.rin}</span>}
           </div>
@@ -175,8 +209,7 @@ export default function InventorySearch({
         )}
       </form>
 
-     
-    {user?.role === "admin" && user?.zona !== "atizapan" && searchResults?.proveedores && (
+      {user?.role === "admin" && user?.zona !== "atizapan" && searchResults?.proveedores && (
       <div className={styles.proveedoresSection}>
         <h3>Información de Proveedores</h3>
         <div className={styles.proveedoresGrid}>

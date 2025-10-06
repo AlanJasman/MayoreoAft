@@ -38,16 +38,18 @@ export default function InventoryDashboard() {
       return errors;
     }
 
-    if (piso && !/^\d+$/.test(piso)) {
-      errors.piso = 'El piso debe contener solo números';
+    // MODIFICACIÓN: Permitir decimales en piso (punto o coma)
+    if (piso && !/^\d+([.,]\d+)?$/.test(piso)) {
+      errors.piso = 'El piso debe contener solo números y un separador decimal (punto o coma)';
     }
 
     if (serie && !/^\d+$/.test(serie)) {
       errors.serie = 'La serie debe contener solo números';
     }
 
-    if (rin && !/^R?\d+$/i.test(rin)) {
-      errors.rin = 'Formato de rin inválido (ej: 15 o R15)';
+    // MODIFICACIÓN: Permitir decimales en rin (punto o coma), con o sin "R"
+    if (rin && !/^R?\d+([.,]\d+)?$/i.test(rin)) {
+      errors.rin = 'Formato de rin inválido (ej: 15, 15.5, R15 o R15.5)';
     }
 
     return errors;
@@ -66,10 +68,11 @@ export default function InventoryDashboard() {
 
     setSearchLoading(true);
     try {
+      // MODIFICACIÓN: Normalizar formato decimal en piso Y rin
       const normalizedParams = {
-        piso: params.piso?.trim() || '',
+        piso: params.piso?.trim().replace(',', '.') || '', // ← Convertir coma a punto en piso
         serie: params.serie?.trim() || '',
-        rin: params.rin?.trim().toUpperCase() || ''
+        rin: params.rin?.trim().toUpperCase().replace(',', '.') || '' // ← Convertir coma a punto en rin
       };
 
       const query = new URLSearchParams(normalizedParams).toString();
@@ -171,7 +174,7 @@ export default function InventoryDashboard() {
     <ProtectedRoute>
       <div className={styles.container}>
         <Head>
-          <title>Existencias - Mayoreo All for Tires</title>
+          <title>Existencias - Mayoreo Aft</title>
         </Head>
 
         <Navigation />
